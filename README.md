@@ -77,3 +77,39 @@ To fulfill the server room access constraint, an **Extended Access Control List 
 - [ ] **Milestone 2 (02 October 2026):** Packet Tracer Topology Build, LACP EtherChannel Trunking, Inter-VLAN Routing, ACL Rules Configuration, and Functional Verification.
 - [ ] **Final Submission (16 October 2026):** Fully Tested `.pkt` Mod
 
+## Milestone 2: Implementation & Verification Evidence
+
+### 1. Network Topology
+Completed physical and logical layout featuring Core-SW, 4 Access Switches, 6 End PCs, and 1 Main Server.
+
+![Working Topology](screenshots/Working%20topology.png)
+
+---
+
+### 2. LACP EtherChannel Verification
+Verified active LACP trunk bundles (`Po1` through `Po4`) on `Core-SW` using `show etherchannel summary`.
+
+![EtherChannel Verification](screenshots/Etherchannelverification2.png)
+
+---
+
+### 3. Inter-VLAN Routing Verification
+Successful 0% packet loss communication between different subnets (Admin-PC1 to Studio-PC1).
+
+![Inter-VLAN Communication Verification](screenshots/Inter-VLAN%20Communication%20Verification.png)
+
+---
+
+### 4. Extended ACL Access Control Verification
+Verified that authorized traffic from Admin VLAN 20 is permitted to reach Main-Server, while unauthorized traffic from Studio VLAN 10 is blocked (`Destination host unreachable`).
+
+![Server Security ACL Verification](screenshots/Server%20Security%20ACL%20Verification.png)
+
+---
+
+### 5. Testing Summary Matrix
+| Test Scenario | Source Device | Target Device | Expected Result | Actual Result | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Inter-VLAN Routing** | Admin-PC1 (VLAN 20) | Studio-PC1 (VLAN 10) | ICMP Echo Reply | ICMP Echo Reply | **PASS** |
+| **Authorized Server Access** | Admin-PC1 (VLAN 20) | Main-Server (VLAN 30) | ICMP Echo Reply | ICMP Echo Reply | **PASS** |
+| **Restricted Server Access** | Studio-PC1 (VLAN 10) | Main-Server (VLAN 30) | Destination Unreachable | Destination Unreachable | **PASS** |
