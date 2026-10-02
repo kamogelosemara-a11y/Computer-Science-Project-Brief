@@ -74,7 +74,7 @@ To fulfill the server room access constraint, an **Extended Access Control List 
 ## 5. Milestone Tracking & Roadmap
 
 - [x] **Milestone 1 (28 August 2026):** Requirements Analysis, Physical & Logical Topology Design, VLSM IP Addressing Plan, and Repository Initialization.
-- [ ] **Milestone 2 (02 October 2026):** Packet Tracer Topology Build, LACP EtherChannel Trunking, Inter-VLAN Routing, ACL Rules Configuration, and Functional Verification.
+- [x] **Milestone 2 (02 October 2026):** Packet Tracer Topology Build, LACP EtherChannel Trunking, Inter-VLAN Routing, ACL Rules Configuration, and Functional Verification.
 - [ ] **Final Submission (16 October 2026):** Fully Tested `.pkt` Mod
 
 ## Milestone 2: Implementation & Verification Evidence
