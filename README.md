@@ -77,16 +77,4 @@ To fulfill the server room access constraint, an **Extended Access Control List 
 - [ ] **Milestone 2 (02 October 2026):** Packet Tracer Topology Build, LACP EtherChannel Trunking, Inter-VLAN Routing, ACL Rules Configuration, and Functional Verification.
 - [ ] **Final Submission (16 October 2026):** Fully Tested `.pkt` Mod
 
-      ## Milestone 2: Implementation & Verification Evidence
-
-### 1. EtherChannel Verification
-Ran `show etherchannel summary` on Core-SW to verify LACP operation across all port channels (`Po1` - `Po4`).
-
-![EtherChannel Verification](screenshots/etherchannel_summary.png)
-
-### 2. Testing Matrix & Results
-| Test Scenario | Source Device | Target Device | Expected Result | Actual Result |
-| :--- | :--- | :--- | :--- | :--- |
-| Inter-VLAN Routing | Admin-PC1 (VLAN 20) | Studio-PC1 (VLAN 10) | Success | Success |
-| Server Access (Authorized) | Admin-PC1 (VLAN 20) | Main-Server (VLAN 30) | Success | Success |
-| Server Access (Restricted) | Studio-PC1 (VLAN 10) | Main-Server (VLAN 30) | Denied (ACL) | Denied (ACL) |
+      
