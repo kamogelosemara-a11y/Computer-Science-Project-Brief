@@ -77,9 +77,3 @@ To fulfill the server room access constraint, an **Extended Access Control List 
 - [ ] **Milestone 2 (02 October 2026):** Packet Tracer Topology Build, LACP EtherChannel Trunking, Inter-VLAN Routing, ACL Rules Configuration, and Functional Verification.
 - [ ] **Final Submission (16 October 2026):** Fully Tested `.pkt` Mod
 
-git add README.md screenshots/
-git commit -m "Add Milestone 2 implementation evidence and test matrix"
-git push origin main
-
-
-      
