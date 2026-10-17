@@ -75,7 +75,7 @@ To fulfill the server room access constraint, an **Extended Access Control List 
 
 - [x] **Milestone 1 (28 August 2026):** Requirements Analysis, Physical & Logical Topology Design, VLSM IP Addressing Plan, and Repository Initialization.
 - [x] **Milestone 2 (02 October 2026):** Packet Tracer Topology Build, LACP EtherChannel Trunking, Inter-VLAN Routing, ACL Rules Configuration, and Functional Verification.
-- [ ] **Final Submission (16 October 2026):** Fully Tested `.pkt` Mod
+- [x] **Final Submission (16 October 2026):** Fully Tested `.pkt` Mod
 
 ## Milestone 2: Implementation & Verification Evidence
 
@@ -113,3 +113,26 @@ Verified that authorized traffic from Admin VLAN 20 is permitted to reach Main-S
 | **Inter-VLAN Routing** | Admin-PC1 (VLAN 20) | Studio-PC1 (VLAN 10) | ICMP Echo Reply | ICMP Echo Reply | **PASS** |
 | **Authorized Server Access** | Admin-PC1 (VLAN 20) | Main-Server (VLAN 30) | ICMP Echo Reply | ICMP Echo Reply | **PASS** |
 | **Restricted Server Access** | Studio-PC1 (VLAN 10) | Main-Server (VLAN 30) | Destination Unreachable | Destination Unreachable | **PASS** |
+
+---
+
+## Milestone 3: Final Integration, Security & Submission (Project CLI-127)
+
+Milestone 3 marks the complete final integration, testing, and delivery of Project CLI-127. All core routing, switching, LACP link aggregation, and security policies have been rigorously validated.
+
+### 🚀 Final Deliverables Included in Repository
+1. **Packet Tracer Simulation:** `CMPG325_CLI127_Network.pkt` — Fully configured hierarchical star topology with active LACP trunking and VLAN segmentation.
+2. **Technical Report:** `Technical_Report_CLI127.pdf` — Comprehensive documentation covering executive summary, VLSM mathematical allocation, technical justifications, and test matrices.
+3. **Verification Evidence (`/screenshots`):**
+   * `etherchannel_summary.png` — Proves active `SU` and `P` bundle status across `Po1` to `Po4`.
+   * `inter_vlan_ping.png` — Demonstrates successful Layer 3 routing between Studio and Admin subnets.
+   * `authorized_server_access.png` — Confirms permitted access from Admin VLAN 20 to `Main-Server` (`172.30.83.10`).
+   * `blocked_server_access.png` — Proves Extended ACL (`RESTRICT_SERVER_ACCESS`) successfully blocks unauthorized traffic from Studio VLAN 10 (`Destination host unreachable`).
+4. **Video Demonstration:** Inset-webcam presentation recording covering the 15–20 minute technical defence and live simulation walkthrough[cite: 3, 4].
+
+### 🔒 Security Configuration Quick Reference
+* **Extended ACL Name:** `RESTRICT_SERVER_ACCESS`
+* **Applied Location:** Outbound on `Interface VLAN 30` (`Server Room`)
+* **Rule Logic:** 
+  * Permits traffic from Admin Subnet (`172.30.82.128/25`) to Server Subnet (`172.30.83.0/26`).
+  * Denies all other unauthorized traffic targeting the server block.
